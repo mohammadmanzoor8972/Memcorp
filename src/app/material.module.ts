@@ -13,8 +13,7 @@ let modules : any = [
   MatCheckboxModule,
   MatRadioModule,
   MatSelectModule,
-  MatIconModule
-  
+  MatIconModule  
 ]
 
 @NgModule({

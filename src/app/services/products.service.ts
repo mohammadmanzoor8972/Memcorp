@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 @Injectable()
 export class ProductsService {
   public cart = [];
@@ -8,7 +9,7 @@ export class ProductsService {
   constructor(private http:HttpClient) { }
 
   getProduct(){
-    return this.http.get("./assets/products.json")
+    return this.http.get("./assets/products.json").pipe(map((res:any)=>res))
   }
   addToCart(product){
     product["qty"] = 1;

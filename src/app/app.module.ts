@@ -21,6 +21,7 @@ import { MatExpansionModule } from '@angular/material/expansion/typings/expansio
 import { MatAccordion } from '@angular/material';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ProductsService } from './services/products.service';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ProductsService } from './services/products.service';
     ShoppingCartComponent,
     HeaderComponent,
     FooterComponent,
-    ShopingFiltersComponent
+    ShopingFiltersComponent,
+    ProductDetailsComponent
   ],
   imports: [ 
     AppRoutingModule,

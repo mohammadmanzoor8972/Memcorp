@@ -4,6 +4,7 @@ import { TodosComponent } from './todos/todos.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { OrderConfirmationComponent } from './components/order-confirmation/order-confirmation.component';
 import { ShopingHomeComponent } from './components/shoping-home/shoping-home.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'home',
     component: ShopingHomeComponent
+  },
+  {
+    path: 'product/:id',
+    component: ProductDetailsComponent
   },
 ];
 

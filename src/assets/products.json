@@ -1,0 +1,113 @@
+[
+  {
+    "id": "1",
+    "price": 9450,
+    "name": "Harley Benton D-120CE",
+    "description": "Valut",
+    "brand": "Yamaha",
+    "category": "Guitars",
+    "availble": "yes",
+    "rating":5   
+  },
+  {
+    "id": "2",
+    "price": 9450,
+    "name": "Guitar brand",
+    "description": "Valut",
+    "brand": "Yamaha",
+    "category": "Guitars",
+    "availble": "yes",
+    "rating":5   
+  },
+  {
+    "id": "3",
+    "price": 9450,
+    "name": "Yamha world 3234",
+    "description": "Valut",
+    "brand": "Yamaha",
+    "category": "Guitars",
+    "availble": "yes",
+    "rating":5   
+  },
+  {
+    "id": "4",
+    "price": 9450,
+    "name": "Onida ",
+    "description": "Valut",
+    "brand": "Yamaha",
+    "category": "Guitars",
+    "availble": "yes",
+    "rating":5   
+  },
+  {
+    "id": "5",
+    "price": 9450,
+    "name": "Yamah jazz",
+    "description": "Valut",
+    "brand": "Yamaha",
+    "category": "Guitars",
+    "availble": "yes",
+    "rating":5   
+  },
+  {
+    "id": "6",
+    "price": 9450,
+    "name": "Zoom 321",
+    "description": "Valut",
+    "brand": "Yamaha",
+    "category": "Guitars",
+    "availble": "yes",
+    "rating":5   
+  },
+  {
+    "id": "7",
+    "price": 9450,
+    "name": "Zoom 431 ",
+    "description": "Valut",
+    "brand": "Yamaha",
+    "category": "Guitars",
+    "availble": "yes",
+    "rating":5   
+  },
+  {
+    "id": "7",
+    "price": 9450,
+    "name": "Onida 103",
+    "description": "Valut",
+    "brand": "Yamaha",
+    "category": "Guitars",
+    "availble": "yes",
+    "rating":5   
+  },
+  {
+    "id": "8",
+    "price": 9450,
+    "name": "Harley",
+    "description": "Valut",
+    "brand": "Yamaha",
+    "category": "Guitars",
+    "availble": "yes",
+    "rating":5   
+  },
+  {
+    "id": "9",
+    "price": 9450,
+    "name": "Harley Benton",
+    "description": "Valut",
+    "brand": "Yamaha",
+    "category": "Guitars",
+    "availble": "yes",
+    "rating":5   
+  },
+  {
+    "id": "10",
+    "price": 9450,
+    "name": "Harley Benton",
+    "description": "Valut",
+    "brand": "Yamaha",
+    "category": "Guitars",
+    "availble": "yes",
+    "rating":5   
+  }
+
+]

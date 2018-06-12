@@ -1,0 +1,65 @@
+<div class="col-sm-12 col-md-9 checkout" *ngIf="carts.length>0">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th class="text-center">Price</th>
+                <th class="text-center">Total</th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of carts;index as i">
+                <td class="col-sm-8 col-md-6">
+                <div class="media">
+                    <a class="thumbnail pull-left" href="#"> <img class="media-object" src="./assets/images/{{item.id}}.jpg" style="width: 72px; height: 72px;"> </a>
+                    &nbsp;&nbsp;<div class="media-body">
+                        <h5 class="media-heading">{{item.name}}</h5>
+                        <h6 class="media-heading"> by Brand name</h6>
+                        <span>Status: </span><span class="text-success"><strong>In Stock</strong></span>
+                    </div>
+                </div></td>
+                <td class="col-sm-1 col-md-1" style="text-align: center">
+                <input type="number" min="1" max="8" class="form-control" id="exampleInputEmail1" [(ngModel)]="item.qty" (change)="calculate()">
+                </td>
+                <td class="col-sm-1 col-md-2 text-center"><strong>{{item.price | currency:'INR'}}</strong></td>
+                <td class="col-sm-1 col-md-2 text-center"><strong>{{item.price * item.qty| currency:'INR'}}</strong></td>
+                <td class="col-sm-1 col-md-1">
+                <button type="button" class="btn btn-danger" (click)="remove(i)">
+                    <span class="glyphicon glyphicon-remove"></span> Remove
+                </button></td>
+            </tr>
+           
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>   </td>
+                <td>   </td>
+                <td>   </td>
+                <td><h5>Subtotal<br>shipping</h5><h3>Total</h3></td>
+                <td class="text-right"><h5><strong>{{subTotal|currency:'INR'}}<br>{{50|currency:'INR'}}</strong></h5><h3>{{subTotal+50|currency:'INR'}}</h3></td>
+            </tr>
+            <tr>
+                <td>   </td>
+                <td>   </td>
+                <td>   </td>
+                <td>
+                <button type="button" class="btn btn-default"  routerLink="/home">
+                    <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
+                </button></td>
+                <td>
+                <button type="button" class="btn btn-success"  routerLink="/orderconfirm">
+                    Checkout <span class="glyphicon glyphicon-play"></span>
+                </button></td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<div class="empty container" *ngIf="carts.length==0">
+    <h3>Your cart is empty </h3>
+        <button type="button" class="btn btn-default"  routerLink="/home">
+            <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
+        </button>
+</div>

@@ -32,6 +32,7 @@ const routes: Routes = [
     path: 'product/:id',
     component: ProductDetailsComponent
   },
+  { path: '**', component: ShopingHomeComponent }
 ];
 
 @NgModule({

@@ -1,4 +1,4 @@
-<div class="aside-fileter">
+<div class="aside-fileter container-fluid">
   <div class="col-md-12 col-sm-12">
     <div class="inner-filter-avblt">
       <label for="menu-toggle">
@@ -16,85 +16,61 @@
       </ul>
     </div>
     <div class="inner-filter-avblt">
-        <label for="menu-toggle">
-          <strong>CATEGORY</strong>
-          <span class="caret"></span>
-        </label>
-        <input type="checkbox" id="menu-toggle" checked/>
-        <ul id="menu">
-          <li>
-            <label class="avability-checkmark">New
-              <input type="checkbox">
+      <label for="menu-toggle">
+        <strong>CATEGORY</strong>
+        <span class="caret"></span>
+      </label>
+      <input type="checkbox" id="menu-toggle" checked/>
+      <ul id="menu">
+        <li *ngFor="let item of category">
+          <label class="avability-checkmark">{{item?.name}}
+            <input type="checkbox" #inputCat id="{{item._id}}" name="item.name" [value]="inputCat.checked ? 'true' : 'false'" (change)="filterCategory(inputCat)">
+            <span class="checkmark"></span>
+          </label>
+        </li>
+      </ul>
+    </div>
+    <div class="inner-filter-avblt">
+      <label for="menu-toggle">
+        <strong>NO OF STRINGS</strong>
+        <span class="caret"></span>
+      </label>
+      <input type="checkbox" id="menu-toggle" checked/>
+      <ul id="menu">
+        <li>
+          <label class="avability-checkmark">2
+            <input type="checkbox" #inputString id="2" [value]="inputString.checked ? 'true' : 'false'" (change)="filterString(inputString)">
+            <span class="checkmark"></span>
+          </label>
+        </li>
+        <li>
+            <label class="avability-checkmark">4
+              <input type="checkbox" #inputString id ="4" [value]="inputString.checked ? 'true' : 'false'" (change)="filterString(inputString)">
               <span class="checkmark"></span>
             </label>
           </li>
           <li>
-              <label class="avability-checkmark">Open
-                <input type="checkbox">
+              <label class="avability-checkmark">6
+                <input type="checkbox" #inputString id="6" [value]="inputString.checked ? 'true' : 'false'" (change)="filterString(inputString)">
                 <span class="checkmark"></span>
               </label>
             </li>
-        </ul>
-      </div>
-      <div class="inner-filter-avblt">
-          <label for="menu-toggle">
-            <strong>NO OF STRINGS</strong>
-            <span class="caret"></span>
+      </ul>
+    </div>
+    <div class="inner-filter-avblt">
+      <label for="menu-toggle">
+        <strong>BRAND</strong>
+        <span class="caret"></span>
+      </label>
+      <input type="checkbox" id="menu-toggle" checked/>
+      <ul id="menu">
+        <li *ngFor="let item of brand">
+          <label class="avability-checkmark">{{item?.name}}
+            <input type="checkbox" #inputBrand id="{{item._id}}" name="item.name" [value]="inputBrand.checked ? 'true' : 'false'" (change)="filterBrand(inputBrand)">
+            <span class="checkmark"></span>
           </label>
-          <input type="checkbox" id="menu-toggle" checked/>
-          <ul id="menu">
-            <li>
-              <label class="avability-checkmark">2
-                <input type="checkbox">
-                <span class="checkmark"></span>
-              </label>
-            </li>
-            <li>
-                <label class="avability-checkmark">4
-                  <input type="checkbox">
-                  <span class="checkmark"></span>
-                </label>
-              </li>
-              <li>
-                  <label class="avability-checkmark">6
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
-                  </label>
-                </li>
-          </ul>
-        </div>
-        <div class="inner-filter-avblt">
-            <label for="menu-toggle">
-              <strong>BRAND</strong>
-              <span class="caret"></span>
-            </label>
-            <input type="checkbox" id="menu-toggle" checked/>
-            <ul id="menu">
-              <li>
-                <label class="avability-checkmark">Yamaha
-                  <input type="checkbox">
-                  <span class="checkmark"></span>
-                </label>
-              </li>
-              <li>
-                  <label class="avability-checkmark">Zoom
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
-                  </label>
-                </li>
-                <li>
-                    <label class="avability-checkmark">Fender
-                      <input type="checkbox">
-                      <span class="checkmark"></span>
-                    </label>
-                  </li>
-                  <li>
-                      <label class="avability-checkmark">Samson
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                      </label>
-                    </li>
-            </ul>
-          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

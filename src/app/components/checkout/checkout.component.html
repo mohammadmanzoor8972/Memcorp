@@ -13,7 +13,9 @@
             <tr *ngFor="let item of carts;index as i">
                 <td class="col-sm-8 col-md-6">
                 <div class="media">
-                    <a class="thumbnail pull-left" href="#"> <img class="media-object" src="./assets/images/{{item.id}}.jpg" style="width: 72px; height: 72px;"> </a>
+                  
+                    <a *ngIf="item.rating" class="thumbnail pull-left" href="#"> <img class="media-object" src="./assets/images/{{item._id}}.jpg" style="width: 72px; height: 72px;"> </a>
+                    <a *ngIf="!item.rating" class="thumbnail pull-left" href="#"> <img class="media-object" src="https://evening-tor-29203.herokuapp.com/images/{{item.images[0]}}" style="width: 72px; height: 72px;"> </a>
                     &nbsp;&nbsp;<div class="media-body">
                         <h5 class="media-heading">{{item.name}}</h5>
                         <h6 class="media-heading"> by Brand name</h6>
@@ -49,13 +51,15 @@
                     <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
                 </button></td>
                 <td>
-                <button type="button" class="btn btn-success"  routerLink="/orderconfirm">
+                <button type="button" class="btn btn-success"  routerLink="/orderconfirm" (click)="checkOut()">
                     Checkout <span class="glyphicon glyphicon-play"></span>
                 </button></td>
             </tr>
         </tfoot>
     </table>
 </div>
+
+
 
 <div class="empty container" *ngIf="carts.length==0">
     <h3>Your cart is empty </h3>

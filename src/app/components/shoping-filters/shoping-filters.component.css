@@ -15,7 +15,7 @@ label {
   -webkit-transition: all 0.3s ease;
 }
 #menu-toggle:checked + #menu {
-  max-height: 100px;
+  max-height: 300px;
 }
 
 /* The container */

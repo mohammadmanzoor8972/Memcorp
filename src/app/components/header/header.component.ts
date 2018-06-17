@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductsService } from '../../services/products.service';
+import { SharedDataService } from '../../services/shared-data.service';
 
 @Component({
   selector: 'app-header',
@@ -10,15 +11,21 @@ import { ProductsService } from '../../services/products.service';
 export class HeaderComponent implements OnInit {
 
   private count = 0;
-  constructor(private route:Router, public service:ProductsService) { }
+  public filter:any = {
+    "search": "",
+    "categoryIds": [],
+    "brandIds": [],
+    "numberOfStrings": []
+  }
+
+  constructor(private route:Router, public service:ProductsService, private shared:SharedDataService) { }
 
   ngOnInit() {
     this.count = this.service.getProductCount();
   }
 
   searchProduct(input:HTMLInputElement){
-    //alert(input.value)
-    this.route.navigateByUrl("/home?q="+input.value);
+   this.shared.filterProductEvent.emit(this.filter);
   }
 
 }

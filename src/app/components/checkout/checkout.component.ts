@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
+import { NotifyComponent } from '../notify/notify.component';
 
 @Component({
   selector: 'app-checkout',
@@ -8,12 +9,10 @@ import { ProductsService } from '../../services/products.service';
 })
 export class CheckoutComponent implements OnInit {
 
-  public carts = [];
-  public finalCart = [];
-  public mycarts = [];
+  public carts:any = [];
   private subTotal = 0;
   private deliveryTotal = 0;
-  constructor(private http:ProductsService) { }
+  constructor(private http:ProductsService, private notify:NotifyComponent) { }
 
   ngOnInit() {
     this.carts = this.http.getProductfromCart();
@@ -30,6 +29,33 @@ export class CheckoutComponent implements OnInit {
   remove(index){
     this.carts.splice(index,1);
     this.calculate();
+    this.http.removeProductItem();
+  }
+
+  checkOut(){
+    let guitar = {}; guitar["productIds"] = [];
+    let acessories = {}; acessories["accessories"] = [];
+    this.carts.forEach((item)=>{
+      if(item.brandId){
+        guitar["productIds"].push(item._id);
+      }else{
+        acessories["accessories"].push({"id":item._id, "quantity":item.qty})
+      }
+    }) 
+
+    this.http.postProducts(guitar).subscribe(()=>{
+      this.notify.show("Place order successfully");
+    });
+    this.http.postAccessories(acessories).subscribe(()=>{
+      this.notify.show("Place order successfully");
+    });
+    
+    
+
+  }
+
+  OnDestroy(){
+    
   }
 
 }

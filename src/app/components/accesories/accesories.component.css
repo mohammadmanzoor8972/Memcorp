@@ -1,0 +1,21 @@
+img{
+    width:93px;
+    padding:5px
+}
+
+tr{
+    margin : 5px 0px 5px 0px;
+    
+}
+
+li{
+    border-bottom: 1px solid gray;
+    margin: 5px;
+    padding-bottom: 9px;
+}
+
+.currency{
+    color : red;
+    font-size:1.5em;
+
+}

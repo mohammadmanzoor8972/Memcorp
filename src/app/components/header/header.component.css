@@ -23,13 +23,18 @@
 }
 
 .flipkart-navbar-button {
-    background-color: #ffe11b;
-    border: 1px solid #ffe11b;
+    background-color: #ff9f1a;
+    border: 1px solid #ff9f1a;
     border-radius: 0 2px 2px 0;
-    color: #565656;
+    color: #ffffff!important;
     padding: 15px 0;
-    height: 45px;
+    height: 46px;
     cursor: pointer;
+}
+
+.flipkart-navbar-button:hover {
+    background-color: #b36800;
+    color: #ffffff!important;
 }
 
 .cart-button {
@@ -212,4 +217,12 @@
 .sidenav-heading{
     font-size: 36px;
     color: #fff;
+}
+
+.margin{
+    margin:10px;
+}
+
+.padding{
+    padding:10px;
 }

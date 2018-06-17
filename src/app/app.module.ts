@@ -3,12 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule, NgControl, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
-import {OverlayModule} from '@angular/cdk/overlay';
-
 import { AppComponent } from './app.component';
-import { TodosComponent } from './todos/todos.component';
 import { AppRoutingModule } from './app.routing.module';
-import { MaterialModule } from './material.module';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { OrderConfirmationComponent } from './components/order-confirmation/order-confirmation.component';
 import { ShopingHomeComponent } from './components/shoping-home/shoping-home.component';
@@ -22,11 +18,14 @@ import { MatAccordion } from '@angular/material';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ProductsService } from './services/products.service';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { NotifyComponent } from './components/notify/notify.component';
+import { AccesoriesComponent } from './components/accesories/accesories.component';
+import { Constant } from './services/constant';
+import { FilterPipe } from './services/filter.pipes';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodosComponent,
     CheckoutComponent,
     OrderConfirmationComponent,
     ShopingHomeComponent,
@@ -34,19 +33,20 @@ import { ProductDetailsComponent } from './components/product-details/product-de
     HeaderComponent,
     FooterComponent,
     ShopingFiltersComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    NotifyComponent,
+    AccesoriesComponent,
+    FilterPipe
   ],
   imports: [ 
     AppRoutingModule,
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    MaterialModule,
-    OverlayModule,
     AngularFontAwesomeModule,
     ReactiveFormsModule,
     ],
-  providers: [HttpClient, ProductsService],
+  providers: [HttpClient, ProductsService, NotifyComponent, Constant],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

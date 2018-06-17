@@ -1,0 +1,69 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Acessories List</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+
+          <div class="row" *ngIf="acessories">
+            <div class="col-md-12 col-md-offset-3 col-md-6">
+              <div class="panel panel-default">
+                <div class="row" style="display: block;">
+                  <div class="col-md-12">
+                    <div class="input-group c-search">
+                      <input type="text" class="form-control" id="contact-list-search" [(ngModel)]="searchText">
+                      <span class="input-group-btn">
+                        &nbsp;
+                        <button class="btn btn-danger" type="button">Search</button>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <ul class="list-group" id="contact-list">                  
+                  <li class="row padding" *ngFor="let item of acessories | filter:searchText">
+                     
+                    <div class="col-md-3 padding ">
+                      <img src="https://evening-tor-29203.herokuapp.com/images/{{item.images[0]}}" alt="Glenda Patterson" class="img-responsive img-circle" />
+                    </div>
+                    <div class="col-md-9">
+   
+                        <span class="name currency">{{item.price|currency:'INR'}}</span>
+                      <br/>
+                      <span class="glyphicon glyphicon-map-marker text-muted c-info" data-toggle="tooltip" title="5020 Poplar Dr"></span>
+                      <span class="visible-xs">
+                        <span class="text-muted">{{item.name}}</span>
+                        <br/>
+                      </span>
+                      <span class="glyphicon glyphicon-earphone text-muted c-info" data-toggle="tooltip" title="(538) 718-7548"></span>
+                      <form class="form-inline">
+                      <select class="form-control form-control-sm  btn-sm">
+                          <option value="small">Small</option>
+                          <option value="medium">Medium</option>
+                          <option value="large">Large</option>
+                      </select> &nbsp; &nbsp;
+                      <button type="button" (click)="addToCart(item)" class="btn  btn-primary btn-success btn-sm pull-right">Add to Cart</button>
+                   </form>
+                    </div>
+                  </li>
+                  
+                  <div class="clearfix"></div>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

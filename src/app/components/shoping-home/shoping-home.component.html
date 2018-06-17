@@ -19,14 +19,17 @@
               <div class="info">
                   <span class="price">Rs. {{product.price}}</span>
                   <h5 class="truncate"> {{product.name}}</h5>
+                  {{product._id}}
                   <p>Model is awesome</p>
                   
                  
-                <div class="separator clear-left">
-                  <p class="btn-add" (click)="addtocart(product)">
+                <div class="separator clear-left" [ngClass]="product.soldDate ? 'disable' : ''" >
+                  <p class="btn-add" (click)="addtocart(product)" >
                     <i class="fa fa-shopping-cart"></i>
-                    Add to cart
+                  <span *ngIf="product.soldDate">Sold Out</span> 
+                  <span *ngIf="!product.soldDate"> Add to cart</span> 
                   </p>
+                
                   <p class="btn-details" routerLink="/product/{{product._id}}">
                     <i class="fa fa-list"></i>
                    More details

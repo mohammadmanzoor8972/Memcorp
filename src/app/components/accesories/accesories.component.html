@@ -47,7 +47,7 @@
                           <option value="medium">Medium</option>
                           <option value="large">Large</option>
                       </select> &nbsp; &nbsp;
-                      <button type="button" (click)="addToCart(item)" class="btn  btn-primary btn-success btn-sm pull-right">Add to Cart</button>
+                      <button type="button" [ngClass]="item.soldQuantity >= item.quantity ? 'disable':''" (click)="addToCart(item)" class="btn  btn-primary btn-success btn-sm pull-right">Add to Cart</button>
                    </form>
                     </div>
                   </li>

@@ -8,7 +8,7 @@ export class Constant {
     public GETBRANDLIST =this.APIPATH+"brands";
     public GETCATEGORYLIST =this.APIPATH+"categories";
     public GETACESSORIES = this.APIPATH+"accessories";
-    public POSTPRODUCT = this.APIPATH+"accessories/buynow";
-    public POSTACCESSORIES = this.APIPATH+"products/buynow";
+    public POSTPRODUCT = this.APIPATH+"products/buynow";
+    public POSTACCESSORIES = this.APIPATH+"accessories/buynow";
 
 }

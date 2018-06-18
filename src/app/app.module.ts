@@ -8,7 +8,6 @@ import { AppRoutingModule } from './app.routing.module';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { OrderConfirmationComponent } from './components/order-confirmation/order-confirmation.component';
 import { ShopingHomeComponent } from './components/shoping-home/shoping-home.component';
-import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
@@ -18,11 +17,12 @@ import { MatAccordion } from '@angular/material';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ProductsService } from './services/products.service';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
-import { NotifyComponent } from './components/notify/notify.component';
+
 import { AccesoriesComponent } from './components/accesories/accesories.component';
 import { Constant } from './services/constant';
 import { FilterPipe } from './services/filter.pipes';
 import { LoaderComponent } from './common/loader/loader.component';
+import { NotifyComponent } from './common/notify/notify.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,6 @@ import { LoaderComponent } from './common/loader/loader.component';
     CheckoutComponent,
     OrderConfirmationComponent,
     ShopingHomeComponent,
-    ShoppingCartComponent,
     HeaderComponent,
     FooterComponent,
     ShopingFiltersComponent,

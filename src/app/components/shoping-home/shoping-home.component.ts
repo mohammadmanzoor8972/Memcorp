@@ -3,7 +3,6 @@ import { Component, OnInit, Output } from '@angular/core';
 import { Router, RouterEvent, RouterState } from '@angular/router';
 import { ProductsService } from '../../services/products.service';
 import { EventEmitter } from 'events';
-import { NotifyComponent } from '../notify/notify.component';
 import { SharedDataService } from '../../services/shared-data.service';
 
 export interface ProductFilterModel {

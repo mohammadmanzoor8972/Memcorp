@@ -2,9 +2,9 @@ import { Injectable, EventEmitter } from '@angular/core';
 import { Observable, observable} from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { NotifyComponent } from '../components/notify/notify.component';
 import { Constant } from './constant';
 import { async } from '@angular/core/testing';
+import { NotifyComponent } from '../common/notify/notify.component';
 
 
 @Injectable()

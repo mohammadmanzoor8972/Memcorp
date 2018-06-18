@@ -1,7 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
-import { NotifyComponent } from '../notify/notify.component';
-
+import { NotifyComponent } from '../../common/notify/notify.component';
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',

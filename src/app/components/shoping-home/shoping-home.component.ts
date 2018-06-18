@@ -37,8 +37,10 @@ export class ShopingHomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.shared.isLoading.emit(true);
     this.http.getProduct({}).subscribe((resp) => {
       this.products = resp;
+      this.shared.isLoading.emit(false);
     })
   }
 

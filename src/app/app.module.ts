@@ -22,6 +22,7 @@ import { NotifyComponent } from './components/notify/notify.component';
 import { AccesoriesComponent } from './components/accesories/accesories.component';
 import { Constant } from './services/constant';
 import { FilterPipe } from './services/filter.pipes';
+import { LoaderComponent } from './common/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { FilterPipe } from './services/filter.pipes';
     ProductDetailsComponent,
     NotifyComponent,
     AccesoriesComponent,
-    FilterPipe
+    FilterPipe,
+    LoaderComponent
   ],
   imports: [ 
     AppRoutingModule,

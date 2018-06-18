@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SharedDataService } from './services/shared-data.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  isLoading = true;
+  constructor(private shared:SharedDataService){
+    
+
+    shared.isLoading.subscribe((res)=>{
+        this.isLoading = res;
+    })
+  }
 
   
 }
